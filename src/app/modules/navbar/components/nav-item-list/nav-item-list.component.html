@@ -1,0 +1,32 @@
+<mat-divider *ngIf="item.subitems && item.subitems.length" ></mat-divider>
+
+<a
+  mat-list-item
+  [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
+  (click)="itemSelected(item)"
+  [routerLink]="item.ruta"
+>
+  <!-- [ngStyle]="{'padding-left': (depth * 7) + 'px'}" -->
+  <mat-icon class="routeIcon">
+    {{item.nombreIcono}}
+  </mat-icon>
+  
+  <span>{{item.descripcion}}</span>
+
+  <span class="elements-spacer"></span>
+
+  <span fxFlex *ngIf="item.subitems && item.subitems.length">
+    <span fxFlex></span>
+    <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+      expand_more
+    </mat-icon>
+  </span>
+</a>
+
+<div *ngIf="expanded">
+  <app-nav-item-list 
+    *ngFor="let subitem of item.subitems" 
+    [item]="subitem" 
+    [depth]="depth+1">
+  </app-nav-item-list>
+</div>

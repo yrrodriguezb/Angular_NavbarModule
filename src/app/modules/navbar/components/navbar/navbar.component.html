@@ -1,0 +1,23 @@
+<app-nav-top></app-nav-top>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+    #appDrawer
+    class="sidenav" 
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async)"
+  >
+    <mat-nav-list>
+      <app-nav-item-list 
+        *ngFor="let item of navItems" [item]="item">
+      </app-nav-item-list>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

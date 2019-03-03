@@ -1,0 +1,41 @@
+{
+  "items": [
+    { 
+      "descripcion": "Link 1 example", 
+      "nombreIcono": "mail_outline",
+      "ruta": "example"
+
+    },
+    { "descripcion": "Link 2", "ruta": "" },
+    { "descripcion": "Link 3", "ruta": "" },
+    {
+      "descripcion": "Link 4",
+      "nombreIcono": "comment",
+      "subitems": [
+        { 
+          "descripcion": "Link 4.1",
+          "subitems": [
+            { "descripcion": "Link 4.1.1", "ruta": "" },
+            { 
+              "descripcion": "Link 4.1.2",
+              "subitems": [
+                { "descripcion": "Link 4.1.2.1", "ruta": "" },
+                { "descripcion": "Link 4.1.2.2", "ruta": "" }
+              ]
+            }
+          ]
+        },
+        { "descripcion": "Link 4.2", "ruta": "" },
+        { "descripcion": "Link 4.3", "ruta": "" }
+      ]
+    },
+    { "descripcion": "Link 5", "ruta": "" },
+    { "descripcion": "Link 7", "ruta": "" },
+    { 
+      "descripcion": "Link 8" ,
+      "subitems": [
+        { "descripcion": "Link 8.1", "ruta": "" }
+      ]
+    }
+  ]
+}
