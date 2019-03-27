@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { ExampleComponent } from './components/example/example.component';
+import { TestComponent } from './components/test/test.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleComponent
+    ExampleComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@
   [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
   (click)="itemSelected(item)"
   [routerLink]="item.ruta"
+  routerLinkActive="active"
 >
   <!-- [ngStyle]="{'padding-left': (depth * 7) + 'px'}" -->
   <mat-icon class="routeIcon">

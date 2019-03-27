@@ -5,14 +5,16 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SidebarService } from '../../services';
 import { NavItems } from '../../interfaces/navitems';
+import { fadeAnimation } from '../../animations/fadeIn.animations';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  animations: [
+    fadeAnimation
+  ]
 })
-
-
 export class NavbarComponent implements AfterViewInit {
   @ViewChild('appDrawer') appDrawer: ElementRef;
 
@@ -37,6 +39,10 @@ export class NavbarComponent implements AfterViewInit {
     this.sidebarService.getItems().subscribe((data: any) => {
       this.navItems = data.items;
     });
+  }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 
 }
