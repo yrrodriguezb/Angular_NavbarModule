@@ -1,21 +1,16 @@
-import { trigger, state, transition, animate, style } from '@angular/animations';
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavItem } from '../../interfaces/navitems';
 import { SidebarService } from '../../services';
+import { indicatorRotate, slideInDown } from '../../animations';
 
 @Component({
   selector: 'app-nav-item-list',
   templateUrl: './nav-item-list.component.html',
   styleUrls: ['./nav-item-list.component.scss'],
   animations: [
-    trigger('indicatorRotate', [
-      state('collapsed', style({transform: 'rotate(0deg)'})),
-      state('expanded', style({transform: 'rotate(180deg)'})),
-      transition('expanded <=> collapsed',
-        animate('225ms cubic-bezier(0.4,0.0,0.2,1)')
-      ),
-    ])
+    indicatorRotate,
+    slideInDown
   ]
 })
 export class NavItemListComponent implements OnInit {

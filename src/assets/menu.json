@@ -1,12 +1,13 @@
 {
   "items": [
+    { "descripcion": "Inicio", "nombreIcono": "home", "ruta": "/"},  
     { 
       "descripcion": "example", 
       "nombreIcono": "mail_outline",
-      "ruta": "example"
-
-    },
-    { "descripcion": "test", "ruta": "test" },
-    { "descripcion": "example2", "ruta": "example" }
+      "subitems": [
+        { "descripcion": "Test", "ruta": "test" },
+        { "descripcion": "Example", "ruta": "example" }
+      ]
+    }
   ]
 }
